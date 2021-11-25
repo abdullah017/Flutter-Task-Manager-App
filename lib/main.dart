@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Taskmanager_app',
       debugShowCheckedModeBanner: false,
-      theme: Themes().lightTheme,
-      darkTheme: Themes().darkTheme,
+      theme: Themes.light,
+      darkTheme: Themes.dark,
       themeMode: ThemeService().getThemeMode(),
       translations: Translation(),
       locale: Locale('en'),

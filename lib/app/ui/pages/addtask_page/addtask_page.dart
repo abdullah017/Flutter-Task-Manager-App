@@ -191,7 +191,7 @@ class AddTaskPage extends GetView<AddTaskController> {
         hint: DateFormat.yMd().format(_controller.selectedDate.value),
         widget: IconButton(
           onPressed: () {
-            _controller.getDataFromUser(context);
+            _controller.getDateFromUser(context);
           },
           icon: const Icon(
             Icons.calendar_today_outlined,
@@ -234,17 +234,9 @@ class AddTaskPage extends GetView<AddTaskController> {
         child: Icon(
           Icons.arrow_back_ios,
           size: 20,
-          color: Get.isDarkMode ? Colors.white : Colors.black,
+          color: Get.isDarkMode ? Colors.black : Colors.white,
         ),
       ),
-      actions: const [
-        CircleAvatar(
-          backgroundColor: Colors.amberAccent,
-        ),
-        SizedBox(
-          width: 20,
-        )
-      ],
     );
   }
 }

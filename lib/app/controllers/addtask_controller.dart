@@ -9,7 +9,6 @@ class AddTaskController extends GetxController {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController noteController = TextEditingController();
   ////////////////////////////////////////////////////////////////////////
-
   var taskList = <Task>[].obs;
 
   //DATE-DATETIME VARIABLE
@@ -28,7 +27,7 @@ class AddTaskController extends GetxController {
   RxList<int> remindList = [5, 10, 15, 20, 30].obs;
   ////////////////////////////////////////////////////////////////////////
 // REPEAT VARIABLE
-  RxString selectedRepeat = "Yok".obs;
+  RxString selectedRepeat = "Günlük".obs;
   RxList<String> repeatList = ["Yok", "Günlük", "Haftalık", "Aylık"].obs;
   ////////////////////////////////////////////////////////////////////////
 // COLOR VARIABLE
@@ -41,15 +40,9 @@ class AddTaskController extends GetxController {
     selectedDate;
   }
 
-  @override
-  void onReady() {
-    getTasks();
-    super.onReady();
-  }
   ////////////////////////////////////////////////////////////////////////
-
 //DATE-DATETIME FUNCTIONS
-  getDataFromUser(BuildContext context) async {
+  getDateFromUser(BuildContext context) async {
     pickerDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -102,11 +95,6 @@ class AddTaskController extends GetxController {
       ),
     );
     print("OLUŞTURULAN SATIRIN ID DEĞER:" + "$value");
-  }
-
-  void getTasks() async {
-    List<Map<String, dynamic>> tasks = await DBHelper.query();
-    taskList.assignAll(tasks.map((data) => new Task.fromJson(data)).toList());
   }
 
 // VALIDATE FORM FUNCTION

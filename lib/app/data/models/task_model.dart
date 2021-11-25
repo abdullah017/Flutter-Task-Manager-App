@@ -40,6 +40,7 @@ class Task {
     data["id"] = this.id;
     data["title"] = this.title;
     data["note"] = this.note;
+      data["date"] = this.date;
     data["isCompleted"] = this.isCompleted;
     data["startTime"] = this.startTime;
     data["endTime"] = this.endTime;

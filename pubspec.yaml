@@ -23,6 +23,7 @@ dependencies:
   google_fonts:
   date_picker_timeline:
   sqflite:
+  flutter_staggered_animations:
 dev_dependencies:
   build_runner: 
   freezed: 

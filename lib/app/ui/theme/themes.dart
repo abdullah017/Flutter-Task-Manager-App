@@ -1,21 +1,23 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:taskmanager_app/app/ui/constants/colors_constant.dart';
 
 class Themes {
-  final lightTheme = ThemeData.light().copyWith(
-    primaryColor: Colors.red,
-    cardColor: Colors.white,
-    scaffoldBackgroundColor: Colors.grey[200],
-    shadowColor: Colors.grey, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
-  );
-  final darkTheme = ThemeData.dark().copyWith(
-    primaryColor: Colors.grey[900],
-    cardColor: Colors.grey[900],
-    scaffoldBackgroundColor: Colors.grey[800],
-    shadowColor: Colors.grey, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.grey[300]),
-  );
+//LIGHT THEME
+
+  static final light = ThemeData(
+      backgroundColor: AppColor.white,
+      primaryColor: AppColor.primaryClr,
+      brightness: Brightness.light);
+
+  //DARK THEME
+
+  static final dark = ThemeData(
+      backgroundColor: AppColor.darkGreyClr,
+      primaryColor: AppColor.darkGreyClr,
+      brightness: Brightness.dark);
 }
 
 TextStyle get subHeadingStyle {
@@ -70,6 +72,15 @@ TextStyle get subTitleStyle {
   return GoogleFonts.lato(
     textStyle: TextStyle(
         fontSize: 14,
+        color: Get.isDarkMode ? Colors.grey[100] : Colors.grey[600]),
+  );
+}
+
+TextStyle get titleStyle {
+  return GoogleFonts.lato(
+    textStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
         color: Get.isDarkMode ? Colors.grey[100] : Colors.grey[600]),
   );
 }
